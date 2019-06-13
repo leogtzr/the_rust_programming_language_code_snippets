@@ -8,3 +8,13 @@ First, let’s take a look at the ownership rules. Keep these rules in mind as w
     There can only be one owner at a time.
     When the owner goes out of scope, the value will be dropped.
 
+
+
+==> Copy types <==
+
+All the integer types, such as u32.
+The Boolean type, bool, with values true and false.
+All the floating point types, such as f64.
+The character type, char.
+Tuples, if they only contain types that are also Copy. For example, (i32, i32) is Copy, but (i32, String) is not.
+
