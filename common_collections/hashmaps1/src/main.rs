@@ -8,9 +8,9 @@ fn main() {
     println!("{:?}", scores);
 
     let teams = vec![String::from("blue"), String::from("red")];
-    let initial_scores: Vec<i32> = vec![10, 50];
+    let initial_scores = vec![10, 50];
 
-    let scores: HashMap<_, _> = teams.iter().zip(initial_scores.iter()).collect();
+    let mut scores: HashMap<_, _> = teams.iter().zip(initial_scores.iter()).collect();
 
     println!("{:?}", scores);
 
@@ -25,5 +25,13 @@ fn main() {
     for (key, val) in &scores {
         println!("{}:{}", key, val);
     }
+
+    // Inserting a value if the key has no value:
+    scores.entry(&String::from("Yellow")).or_insert(&1001);
+
+    let mut names: HashMap<String, i32> = HashMap::new();
+    names.entry(String::from("Leo")).or_insert(28);
+
+    println!("{:?}", names);
 
 }
