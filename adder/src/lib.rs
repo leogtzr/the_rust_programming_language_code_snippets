@@ -10,6 +10,28 @@ impl Rectangle {
     }
 }
 
+pub fn add_two(a: i32) -> i32 {
+    a + 2
+}
+
+pub fn greeting(name: &str) -> String {
+    format!("Hello {}!", name)
+}
+
+pub struct Guess {
+    value: i32,
+}
+
+impl Guess {
+    pub fn new(value: i32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("Guess value must be between 1 and 100, got {}.")
+        }
+
+        Guess {value}
+    }
+}
+
 #[cfg(test)]
 mod tests {
     // Bring code under test.
@@ -39,5 +61,31 @@ mod tests {
         let smaller = Rectangle {width: 5, height: 1};
 
         assert!(!smaller.can_hold(&larger));
+    }
+
+    #[test]
+    fn it_adds_two() {
+        assert_eq!(add_two(4), 6);
+    }
+
+    #[test]
+    fn greeting_contains_name() {
+        let result = greeting("Carol");
+        assert!(result.contains("Carol"), "function didn't contain name.");
+    }
+
+    #[test]
+    #[should_panic(expected = "Guess value must be between 1 and 100")]
+    fn greater_than_100() {
+        Guess::new(200);
+    }
+
+    #[test]
+    fn it_works() -> Result<(), String> {
+        if 2+2 == 4 {
+            Ok(())
+        } else {
+            Err(String::from("two plus two does not equal 4"))
+        }
     }
 }
