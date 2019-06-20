@@ -20,4 +20,11 @@ fn main() {
 
     let v5: Vec<bool> = vec![1, 2, 3, 4, 5].iter().map(|x| x % 2 == 0).collect();
     println!("{:?}", v5);
+
+    // let v6: Vec<_> = vec![23, 54, 56, 23].iter().filter(|x: i32| {x % 2 == 0}).collect();
+    // println!("{:?}", v6);
+    let v6: Vec<i32> = vec![1, 2, 3, 4, 5, 6];
+    let v7: Vec<i32> = v6.iter().filter(|x| *x % 2 == 0).map(|x| *x).collect();
+
+    println!("{:?}", v7);
 }
