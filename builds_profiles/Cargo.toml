@@ -1,0 +1,14 @@
+[package]
+name = "builds_profiles"
+version = "0.1.0"
+authors = ["leogtzr <leogutierrezramirez@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+
+[profile.dev]
+opt-level = 0
+
+# opt-level increases the compilation time.
+[profile.release]
+opt-level = 3

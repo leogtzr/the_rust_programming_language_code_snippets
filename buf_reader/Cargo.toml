@@ -1,0 +1,9 @@
+[package]
+name = "buf_reader"
+version = "0.1.0"
+authors = ["leogtzr <leogutierrezramirez@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+stringreader = "0.1.1"
+regex = "1.1.7"
