@@ -1,0 +1,9 @@
+[package]
+name = "hash_string"
+version = "0.1.0"
+authors = ["leogtzr <leogutierrezramirez@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+md5 = "0.6.1"
+rust-crypto = "0.2.36"
